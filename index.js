@@ -4,7 +4,11 @@ const cors = require("cors"); // importing cors library
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
-const port = process.env.PORT || 8080; // choose port from here like 8080, 3001
+const port = process.env.PORT || 8080;
+
+const corsOptions = { origin: 'https://creative-flan-1b18f4.netlify.app', optionsSuccessStatus: 200 };
+
+// choose port from here like 8080, 3001
 
 // Use the CORS middleware before the router
 server.use(cors());
